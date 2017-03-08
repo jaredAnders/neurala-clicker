@@ -4,13 +4,21 @@
   "description": "click counter with user auth",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jared Gilbert",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaredAnders/neurala-clicker.git"
+  },
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "morgan": "^1.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
