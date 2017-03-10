@@ -4,6 +4,12 @@ const router = express.Router();
 const authHelpers = require('../auth/_helpers');
 const passport = require('../auth/local');
 
+router.get('/register', authHelpers.loginRedirect, (req, res, next) => {
+  const renderObject = {};
+  renderObject.title = 'Registration!';
+  res.render('auth/register', renderObject);
+});
+
 router.post('/register', authHelpers.loginRedirect, (req, res, next)  => {
   return authHelpers.createUser(req, res)
   .then((response) => {
@@ -12,6 +18,12 @@ router.post('/register', authHelpers.loginRedirect, (req, res, next)  => {
     })(req, res, next);
   })
   .catch((err) => { handleResponse(res, 500, 'error'); });
+});
+
+router.get('/login', authHelpers.loginRedirect, (req, res, next) => {
+  const renderObject = {};
+  renderObject.title = 'Login!';
+  res.render('auth/login', renderObject);
 });
 
 router.post('/login', authHelpers.loginRedirect, (req, res, next) => {
