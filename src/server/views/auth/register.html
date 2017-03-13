@@ -4,10 +4,26 @@
 
 {% block content %}
 
-  <div class="container">
+  <div class="container-fluid">
     <h1>{{title}}</h1>
-    <input type="text">
-    <button>Sign up</button>
+    <form>
+      <div class="form-group">
+        <label class="control-label" for="email">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Email" aria-required="true" aria-invalid="false" aria-describedby="emailHelp">
+        <span id="emailHelp" class="help-block" aria-hidden="true" style="display: none">Please enter valid email address</span>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" aria-required="true" aria-invalid="false" aria-describedby="passwordHelp">
+        <span id="passwordHelp" class="help-block" aria-hidden="true" style="display: none">Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number and be at least 6 characters long</span>
+      </div>
+      <div class="form-group">
+        <label for="passwordConfirm">Confirm Password</label>
+        <input type="password" class="form-control" id="passwordConfirm" placeholder="Confirm Password" aria-required="true" aria-invalid="false" aria-describedby="passwordConfirmHelp">
+        <span id="passwordConfirmHelp" class="help-block" aria-hidden="true" style="display: none">Passwords must match</span>
+      </div>
+      <button type="submit" class="btn btn-default">Sign up</button>
+    </form>
     <br>
     <a href="/auth/login">Already have an account?</a>
   </div>
